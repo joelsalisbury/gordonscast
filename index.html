@@ -32,7 +32,8 @@
                     <textarea required id="your-message" placeholder="type your message"></textarea>
                   </div>
                   <div class="form-group">
-                    <textarea required id="your-name" placeholder="type your name"></textarea>
+                    <canvas id="signature-pad"></canvas>
+                    <button type="button" id="btn-clear" type="btn btn-compact">clear</button>
                   </div>
                 <button type="submit" class="btn btn-default btn-block">Sign the cast</button>
               </form>
@@ -50,6 +51,8 @@
 
     </div>
     
+
+	<script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
 
 
   <script src="dist/scripts/main.js"></script>

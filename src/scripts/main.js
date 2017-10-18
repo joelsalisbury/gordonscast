@@ -8,6 +8,17 @@
 
 
 
+
+    var canvas = document.querySelector("#signature-pad");
+
+	var signaturePad = new SignaturePad(canvas);
+	
+	$("#btn-clear").on('click',function() {
+		signaturePad.clear();
+	});
+
+
+
     var entries = [
     	{
 
@@ -36,7 +47,7 @@
 	function doEntries() {
 		$("#entries").fadeIn();
 		$("#entries").html("");
-		for (var i = 0; i< 4; i++) {
+		for (var i = 0; i< 3; i++) {
 
 			var randfont = fontclasses[Math.floor(Math.random() * fontclasses.length)];
 			entry = entries[i];
@@ -71,6 +82,11 @@ $( "#cast-form" ).submit(function( event ) {
 
 
 doEntries();
+
+
+
+
+
 
 
 
