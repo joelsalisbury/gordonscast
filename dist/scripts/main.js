@@ -5,4 +5,74 @@
     	$("#your-message").removeClass('gloria');
     	$("#your-message").addClass($(this).data('font'));
     });
+
+
+
+    var entries = [
+    	{
+
+	    	"name":"Alan",
+	    	"message":"Get well soon!"
+    	},
+
+    	{
+	    	"name":"Dan",
+	    	"message":"Get well soon!"
+    	},
+
+    	{
+
+	    	"name":"Joel",
+	    	"message":"Get well soon!"
+    	}
+    ];
+
+    var fontclasses = [
+    	"gloria",
+    	"indieflower",
+    	"permmark"
+    ];
+
+	function doEntries() {
+		$("#entries").fadeIn();
+		$("#entries").html("");
+		for (var i = 0; i< 4; i++) {
+
+			var randfont = fontclasses[Math.floor(Math.random() * fontclasses.length)];
+			entry = entries[i];
+			console.log(entry);
+			var div = $("<div/>");
+
+				div.addClass('item').addClass('col-md-6').addClass(randfont);
+				div.append("<span class='message'>"+entry.message+"</span>");
+				div.append("<br> <span class='name'>"+entry.name+"</span");
+				
+				console.log(div);
+			$("#entries").append(div);
+
+		}
+	}
+
+
+$( "#cast-form" ).submit(function( event ) {
+  
+  	$("#entries").fadeOut();
+
+	var userMsg = $("#your-message").val();
+	var userName = $("#your-name").val();
+
+	entries.unshift({"name":userName, "message" : userMsg});
+
+	doEntries();
+
+  event.preventDefault();
+});
+
+
+
+doEntries();
+
+
+
+
 })();

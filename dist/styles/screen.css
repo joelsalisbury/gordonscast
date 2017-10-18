@@ -379,6 +379,9 @@ body.modal-open {
   color: #000;
   opacity: 1; }
 
+#entries {
+  display: none; }
+
 .carousel-control {
   bottom: 0;
   right: auto;
